@@ -18,7 +18,7 @@ object TriggerBot {
   var onlyPlayers = true
 }
 
-final class TriggerBot extends Mod(Keyboard.KEY_R) {
+final class TriggerBot extends Mod(Keyboard.KEY_V) {
 
   /* Instance of Random used to get the amount of time to wait between hits */
   private val random      = new Random
@@ -30,7 +30,7 @@ final class TriggerBot extends Mod(Keyboard.KEY_R) {
    * @see     net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent#LivingUpdateEvent
    */
   override def onLivingUpdate(mc: Minecraft, player: EntityClientPlayerMP): Unit = {
-    val delay = random.nextFloat / 2
+    val delay = random.nextFloat / 7
     if (timer.hasReached(delay)) {
       if (mc.objectMouseOver != null) {
         if (mc.objectMouseOver.typeOfHit == MovingObjectType.ENTITY) {
